@@ -1,12 +1,26 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { HomeComponent } from './pages/home/home'; // Nhớ import cả HomeComponent nếu mày dùng ở bài trước
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [CommonModule, RouterOutlet, HomeComponent], 
   templateUrl: './app.html',
-  styleUrl: './app.css',
+  styleUrl: './app.css'
 })
+
+export class AppComponent {
+  // Bài 3: Khai báo biến
+  name = "Nguyen Van A";
+  age = 25;
+
+  // Bài 4: Hàm click
+  handleClick() {
+    alert("Bạn đã click button");
+  }
+}
 export class App {
   title = 'Hello from App Component'; // property -> {{ title }}
   name = 'Angular';
