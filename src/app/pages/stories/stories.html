@@ -1,0 +1,19 @@
+<!---@for --->
+<h2>Danh sách truyện tranh</h2>
+
+@for (story of stories; track story.title) {
+<img src="{{ story.image }}" alt="{{ story.title }}" class="story-image" />
+<div class="story-card">
+  <h3>{{ story.title }}</h3>
+
+  <p>Tác giả: {{ story.author }}</p>
+
+  <p>Lượt xem: {{ story.views }}</p>
+  @if (story.views > 1000) {
+    <p class="popular">Truyện phổ biến</p>
+  } @else {
+    <p class="not-popular">Truyện ít phổ biến</p>
+  }
+</div>
+
+}

@@ -1,38 +1,28 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { HomeComponent } from './pages/home/home'; // Nhớ import cả HomeComponent nếu mày dùng ở bài trước
+import { RouterLink, RouterOutlet,RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HomeComponent], 
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  // Thêm RouterLink để các thẻ <a routerLink="..."> hoạt động
+  imports: [CommonModule, RouterOutlet, RouterLink],
+  // Sử dụng template trực tiếp thay vì templateUrl để tránh lỗi đường dẫn
+  template: `
+    <nav>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+        <li><a routerLink="/products">Products</a></li>
+        <li><a routerLink="/stories">Stories</a></li>
+      </ul>
+    </nav>
+    <hr />
+    <router-outlet></router-outlet>
+  `,
+  styleUrl: './app.css',
 })
-
 export class AppComponent {
-  // Bài 3: Khai báo biến
-  name = "Nguyen Van A";
-  age = 25;
-
-  // Bài 4: Hàm click
-  handleClick() {
-    alert("Bạn đã click button");
-  }
-}
-export class App {
-  title = 'Hello from App Component'; // property -> {{ title }}
-  name = 'Angular';
-  age = 30;
-
-  // method -> event binding (click)
-  sayHello() {
-    alert('Hello from App Component');
-    console.log('Hello from App Component');
-  }
-
-  delete() {
-    console.log('Delete button clicked');
-  }
+  title = 'fe1-web2081-summer26';
 }
