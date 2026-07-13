@@ -6,6 +6,12 @@ import { Component } from '@angular/core';
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class Home {
+export class HomeComponent {
+  name = "Nguyen Van A";
+  age = 25;
 
+  handleClick() {
+    alert("Bạn đã click button thành công!");
+  }
 }
+

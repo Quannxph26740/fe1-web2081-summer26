@@ -1,0 +1,15 @@
+/* src/styles.css */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif; /* Nếu mày đã nhúng font Inter */
+  margin: 0;
+  padding: 0;
+}
+
+.active {
+  color: #10B981; /* text-green-500 */
+  border-bottom: 3px solid #10B981;
+}

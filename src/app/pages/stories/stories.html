@@ -1,19 +1,55 @@
-<!---@for --->
-<h2>Danh sách truyện tranh</h2>
+<div class="min-h-screen bg-gray-50 py-10 px-4">
+  <!-- Tiêu đề trang -->
+  <div class="max-w-6xl mx-auto mb-10 text-center">
+    <h2 class="text-4xl font-extrabold text-gray-900 mb-2">📚 Thư Viện Truyện Tranh</h2>
+    <p class="text-gray-500">Cập nhật những bộ truyện hot nhất mỗi ngày</p>
+    <div class="h-1 w-20 bg-indigo-600 mx-auto mt-4 rounded-full"></div>
+  </div>
 
-@for (story of stories; track story.title) {
-<img src="{{ story.image }}" alt="{{ story.title }}" class="story-image" />
-<div class="story-card">
-  <h3>{{ story.title }}</h3>
+  <!-- Grid danh sách truyện -->
+  <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    
+    @for (story of stories; track story.title) {
+      <div class="group bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col">
+        
+        <!-- Khung ảnh có hiệu ứng zoom khi hover -->
+        <div class="relative overflow-hidden aspect-[3/4]">
+          <img [src]="story.image" 
+               [alt]="story.title" 
+               class="w-full h-full object-cover transform group-hover:scale-110 transition-duration-500" />
+          
+          <!-- Badge Phổ biến (Bài 4 nâng cao) -->
+          <div class="absolute top-4 left-4">
+            @if (story.views > 90000) {
+              <span class="bg-red-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter shadow-lg">
+                🔥 Hot
+              </span>
+            } @else {
+              <span class="bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter shadow-lg">
+                Mới
+              </span>
+            }
+          </div>
+        </div>
 
-  <p>Tác giả: {{ story.author }}</p>
+        <!-- Nội dung -->
+        <div class="p-5 flex-grow">
+          <h3 class="text-xl font-bold text-gray-800 group-hover:text-indigo-600 transition-colors mb-1">
+            {{ story.title }}
+          </h3>
+          <p class="text-gray-400 text-sm mb-4">Tác giả: <span class="text-gray-600 font-medium">{{ story.author }}</span></p>
+          
+          <div class="flex items-center justify-between mt-auto">
+            <div class="text-gray-500 text-sm">
+               👁️ <span class="font-bold text-gray-700">{{ story.views | number }}</span>
+            </div>
+            <button class="bg-gray-900 text-white text-xs font-bold px-5 py-2 rounded-lg hover:bg-indigo-600 transition-all active:scale-95">
+              ĐỌC NGAY
+            </button>
+          </div>
+        </div>
+      </div>
+    }
 
-  <p>Lượt xem: {{ story.views }}</p>
-  @if (story.views > 1000) {
-    <p class="popular">Truyện phổ biến</p>
-  } @else {
-    <p class="not-popular">Truyện ít phổ biến</p>
-  }
+  </div>
 </div>
-
-}

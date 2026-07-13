@@ -1,40 +1,22 @@
-<nav class="bg-blue-600 text-white shadow">
-  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-    <a href="#" class="text-xl font-semibold">
-      <strong>WEB2081 App</strong>
-    </a>
-
-    <div class="hidden md:flex items-center space-x-8">
-      <a href="#" class="hover:text-gray-200">Trang chủ</a>
-      <a href="#" class="hover:text-gray-200">Danh sách</a>
-      <a href="#" class="hover:text-gray-200">Thêm mới</a>
-      <a routerLink="/about" class="hover:text-gray-200">About</a>
-      <a routerLink="/contact" class="hover:text-gray-200">Contact</a>
-      <a routerLink="/stories" class="hover:text-gray-200">Stories</a>
+<!-- Thanh Header (Navbar) -->
+<nav class="bg-indigo-700 text-white shadow-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
+    <div class="flex items-center space-x-8">
+      <a routerLink="/" class="text-xl font-bold tracking-tighter uppercase">WEB2081 <span class="text-indigo-300">App</span></a>
+      <div class="hidden md:flex space-x-6">
+        <a routerLink="/" routerLinkActive="bg-indigo-800" [routerLinkActiveOptions]="{exact: true}" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-indigo-600 transition">Trang chủ</a>
+        <a routerLink="/about" routerLinkActive="bg-indigo-800" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-indigo-600 transition">About</a>
+        <a routerLink="/products" routerLinkActive="bg-indigo-800" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-indigo-600 transition">Sản phẩm</a>
+        <a routerLink="/stories" routerLinkActive="bg-indigo-800" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-indigo-600 transition font-bold text-yellow-300">Truyện tranh</a>
+      </div>
     </div>
-
-    <div class="hidden md:flex items-center space-x-6">
-      <a href="#" class="hover:text-gray-200">Đăng nhập</a>
-      <a href="#" class="hover:text-gray-200">Đăng ký</a>
-    </div>
+    <button class="bg-white text-indigo-700 px-4 py-1.5 rounded-full text-sm font-bold shadow-md hover:bg-gray-100 transition">Login</button>
   </div>
 </nav>
 
-<div class="max-w-6xl mx-auto mt-10 px-4 text-center">
-  <h1 class="text-4xl font-bold mb-4">Chào mừng đến với WEB2081</h1>
-
-<!-- Bài 1 -->
-<h1>Xin chào Angular</h1>
-<p>Tôi đang học Angular Framework</p>
-<hr>
-
-<!-- Bài 3 -->
-<p>Tên: {{ name }}</p>
-<p>Tuổi: {{ age }}</p>
-<hr>
-
-<!-- Bài 4 -->
-<button (click)="handleClick()">Click Me</button>
-
- <router-outlet></router-outlet>
-</div>
+<!-- Phần hiển thị nội dung các trang -->
+<main class="min-h-screen bg-gray-50 py-10">
+  <div class="max-w-5xl mx-auto px-4">
+    <router-outlet></router-outlet>
+  </div>
+</main>
