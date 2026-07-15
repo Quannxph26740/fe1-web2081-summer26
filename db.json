@@ -1,3 +1,39 @@
 {
-  "stories": []
+  "stories": [
+    {
+      "id": 1,
+      "image": "https://images2.alphacoders.com/516/516664.jpg",
+      "title": "One Piece",
+      "author": "Eiichiro Oda",
+      "views": 125000
+    },
+    {
+      "id": 1,
+      "image": "https://images2.alphacoders.com/516/516664.jpg",
+      "title": "One Piece",
+      "author": "Eiichiro Oda",
+      "views": 125000
+    },
+    {
+      "id": 1,
+      "image": "https://images2.alphacoders.com/516/516664.jpg",
+      "title": "One Piece",
+      "author": "Eiichiro Oda",
+      "views": 125000
+    },
+    {
+      "id": 1,
+      "image": "https://images2.alphacoders.com/516/516664.jpg",
+      "title": "One Piece",
+      "author": "Eiichiro Oda",
+      "views": 80000
+    },
+    {
+      "id": 3,
+      "image": "https://upload.wikimedia.org/wikipedia/en/c/c8/Doraemon_volume_1_cover.jpg",
+      "title": "Doraemon",
+      "author": "Fujiko F. Fujio",
+      "views": 80000
+    }
+  ]
 }
